@@ -76,6 +76,11 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	if conf.UrlId != "" {
+		models.RecipientParameter = conf.UrlId
+	} else {
+		models.RecipientParameter = "rid"
+	}
 	if conf.ContactAddress == "" {
 		log.Warnf("No contact address has been configured.")
 		log.Warnf("Please consider adding a contact_address entry in your config.json")

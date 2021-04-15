@@ -128,16 +128,7 @@ var ErrInvalidSendByDate = errors.New("The launch date must be before the \"send
 
 // RecipientParameter is the URL parameter that points to the result ID for a recipient.
 
-var RecipientParameter = ID(conf.UrlId)
-
-func ID(id string) (RecipientParameter string) {
-	if id != "" {
-		RecipientParameter = id
-	} else {
-		RecipientParameter = "rid"
-	}
-	return
-}
+var RecipientParameter string
 
 // Validate checks to make sure there are no invalid fields in a submitted campaign
 func (c *Campaign) Validate() error {
